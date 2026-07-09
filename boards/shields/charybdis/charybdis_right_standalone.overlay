@@ -9,6 +9,12 @@
 #include "charybdis_right_common.dtsi"
 #include "charybdis_trackball_processors.dtsi"
 
-&trackball_split {
-    device = <&trackball>;
+/ {
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>;
+
+        CHARYBDIS_TRACKBALL_PROCESSORS
+    };
 };
